@@ -6,7 +6,7 @@
 /*   By: qmattor <Quincy_Mattor@student.uml.edu>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 22:52:39 by qmattor           #+#    #+#             */
-/*   Updated: 2023/07/19 00:13:46 by qmattor          ###   ########.fr       */
+/*   Updated: 2023/07/19 00:28:32 by qmattor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,10 @@ bool Hex_chess::move_piece(uint8_t old_x, uint8_t old_y, uint8_t new_x,
   }
   return false;
 }
+
+// sf functions
+void Hex_chess::draw(sf::RenderTarget &target, sf::RenderStates states) const {}
+
+void pecies::draw(sf::RenderTarget &target, sf::RenderStates states) const {}
+
+void board::draw(sf::RenderTarget &target, sf::RenderStates states) const {}

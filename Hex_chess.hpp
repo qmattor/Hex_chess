@@ -6,7 +6,7 @@
 /*   By: qmattor <Quincy_Mattor@student.uml.edu>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 22:39:10 by qmattor           #+#    #+#             */
-/*   Updated: 2023/07/19 00:09:54 by qmattor          ###   ########.fr       */
+/*   Updated: 2023/07/19 00:28:16 by qmattor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,25 @@ public:
   inline void set_y(uint8_t y) { this->y = y; }
   inline uint8_t get_y() { return y; }
 
-  void draw(sf::RenderTarget &target, sf::RenderStates states);
+  void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+};
+
+class board : sf::Drawable {
+public:
+  void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 
 class Hex_chess : sf::Drawable {
 private:
   std::vector<pecies> white;
   std::vector<pecies> black;
+  board b;
   static uint8_t dist_from_center(uint8_t, uint8_t);
 
 public:
   Hex_chess();
   bool move_piece(uint8_t, uint8_t, uint8_t, uint8_t);
-  void draw(sf::RenderTarget &target, sf::RenderStates states);
+  void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 
 #endif // __HEX_CHESS__
